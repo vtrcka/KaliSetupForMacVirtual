@@ -13,7 +13,7 @@ GRUB_CMD_LINUX_DEFAULT="quite splash arm64.nosve"
 ```
 Update GRUB >>
 ```
-sudo update-grub
+sudo update-grub && sudo reboot
 ```
 
 
