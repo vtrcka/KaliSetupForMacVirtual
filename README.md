@@ -22,9 +22,14 @@ sudo update-grub
 
 ### Setup HTTPS in kali-tweaks & Upgrade
 
+Setup kali-tweaks >>
 ```
 sudo kali-tweaks
+
 Network Repositories > Protocol HTTPS > Apply
+```
+Upgrade >>
+```
 sudo apt update && sudo apt dist-upgrade -y
 ```
 
