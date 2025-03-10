@@ -37,7 +37,7 @@ sudo apt update && sudo apt dist-upgrade -y && sudo reboot
 sudo apt update && sudo apt install terminator -y
 sudo update-alternatives --set x-terminal-emulator /usr/bin/terminator
 ```
-## Some tweaks config, infinite lines history, background, start maximized etc. >>
+## Some tweaks config, infinite history, background, start maximized etc. >>
 
 Setup script /script/setup_terminator.sh >>
 ```
