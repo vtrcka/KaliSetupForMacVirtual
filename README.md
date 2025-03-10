@@ -1,4 +1,4 @@
-# KaliSetupForMacVirtual
+# Kali Setup For Mac Virtual (ARM64 M-siries)
 Setup for Apple ARM M-series, setup
 
 ## Update GRUB !! Disable arm64.nosve
