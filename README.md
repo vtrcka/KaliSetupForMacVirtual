@@ -34,6 +34,8 @@ sudo apt update && sudo apt dist-upgrade -y && sudo reboot
 ## Weaponized terminal 
 
 ```
-sudo apt update && sudo apt install terminator -y && sudo update-alternatives --set x-terminal-emulator /usr/bin/terminator
+sudo apt update && sudo apt install terminator -y
+sudo update-alternatives --set x-terminal-emulator /usr/bin/terminator
+
 ```
 
