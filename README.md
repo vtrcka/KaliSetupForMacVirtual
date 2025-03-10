@@ -9,7 +9,7 @@ sudo nano /etc/default/grub
 Modify >>
 
 ```
-GRUB_CMD_LINUX?DEFAULT="quite splash arm64.nosve"
+GRUB_CMD_LINUX_DEFAULT="quite splash arm64.nosve"
 ```
 Update GRUB >>
 ```
