@@ -30,6 +30,6 @@ Network Repositories > Protocol HTTPS > Apply
 ```
 Upgrade >>
 ```
-sudo apt update && sudo apt dist-upgrade -y
+sudo apt update && sudo apt dist-upgrade -y && sudo reboot
 ```
 
