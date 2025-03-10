@@ -1,10 +1,30 @@
 # KaliSetupForMacVirtual
 Setup for Apple ARM M-series, setup
 
-# Update to current version
+## Update GRUB !! Disable arm64.nosve
 
-# Setup HTTPS in kali-tweaks
+```
+sudo nano /etc/default/grub
+```
+Modify >>
 
+```
+GRUB_CMD_LINUX?DEFAULT="quite splash arm64.nosve"
+```
+Update GRUB >>
+```
+sudo update-grub
+```
+
+
+
+## Update to current version
+
+### Setup HTTPS in kali-tweaks & Upgrade
+
+```
 sudo kali-tweaks
+Network Repositories > Protocol HTTPS > Apply
+sudo apt update && sudo apt dist-upgrade -y
+```
 
-Setting HTTPS repos + full update >>
