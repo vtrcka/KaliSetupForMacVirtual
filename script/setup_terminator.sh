@@ -37,17 +37,27 @@ check_terminator() {
 
 # Function to set Terminator as the default terminal
 set_default_terminal() {
-    local user="$1"
-    local desktop_file="/home/$user/.local/share/applications/terminator.desktop"
-    echo -e "${YELLOW}[INFO] Setting Terminator as default terminal for user $user...${RESET}"
-    sudo -u "$user" gsettings set org.gnome.desktop.default-applications.terminal exec 'terminator'
-    sudo -u "$user" gsettings set org.gnome.desktop.default-applications.terminal exec-arg "-x"
-    
-    if [ -f "/usr/bin/xdg-mime" ]; then
-        sudo -u "$user" xdg-mime default terminator.desktop x-scheme-handler/terminal
-    fi
-    
-    echo -e "${GREEN}[SUCCESS] Terminator is set as the default terminal for user $user.${RESET}"
+    echo -e "${YELLOW}[INFO] Setting Terminator as the default terminal...${RESET}"
+    sudo update-alternatives --set x-terminal-emulator /usr/bin/terminator
+    echo -e "${GREEN}[SUCCESS] Terminator is now the default terminal.${RESET}"
+}
+
+# Function to update .desktop files to use Terminator
+update_desktop_files() {
+    echo -e "${YELLOW}[INFO] Updating .desktop files to use Terminator...${RESET}"
+    local desktop_dirs=(
+        "/home/*/.config/xfce4/panel"
+        "/root/.config/xfce4/panel"
+    )
+    for dir in "${desktop_dirs[@]}"; do
+        if [ -d "$dir" ]; then
+            sudo find "$dir" -type f -name "*.desktop" -exec grep -lE "Terminal|exo-open --launch TerminalEmulator" {} \; | while read file; do
+                echo -e "${YELLOW}[INFO] Updating $file to use Terminator...${RESET}"
+                sudo sed -i 's|^Exec=.*|Exec=terminator|' "$file"
+            done
+        fi
+    done
+    echo -e "${GREEN}[SUCCESS] .desktop files updated to use Terminator.${RESET}"
 }
 
 # Function to check and create directory if not exists
@@ -92,6 +102,12 @@ check_root
 # Check and install Terminator
 check_terminator
 
+# Set Terminator as the default terminal
+set_default_terminal
+
+# Update .desktop files to use Terminator
+update_desktop_files
+
 # Process root user if -r is set
 if [ "$ROOT_USER" = "true" ]; then
     TARGET_PATH="/root/.config/terminator/config"
@@ -109,7 +125,6 @@ if [ "$ROOT_USER" = "true" ]; then
     sudo chown root:root "$TARGET_PATH"
     sudo chmod 775 "$TARGET_PATH"
     echo -e "${GREEN}[SUCCESS] Config file downloaded successfully for root and permissions set.${RESET}"
-    set_default_terminal "root"
 fi
 
 # Process each user specified in -u
@@ -132,7 +147,5 @@ if [ -n "$USERS" ]; then
         sudo chown "$USER:$USER" "$TARGET_PATH"
         sudo chmod 775 "$TARGET_PATH"
         echo -e "${GREEN}[SUCCESS] Config file downloaded successfully for user $USER and permissions set.${RESET}"
-        
-        set_default_terminal "$USER"
     done
 fi
