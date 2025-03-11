@@ -43,5 +43,5 @@ Setup script /script/setup_terminator.sh >>
 
 ## Useful packages to install
 ```
-sudo apt update && sudo apt install -y seclists burpsuite dirsearch go git gobuster 
+sudo apt update && sudo apt install -y seclists burpsuite dirsearch golang git gobuster 
 ```
