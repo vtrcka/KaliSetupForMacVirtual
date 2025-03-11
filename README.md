@@ -41,6 +41,11 @@ sudo update-alternatives --set x-terminal-emulator /usr/bin/terminator
 
 Setup script /script/setup_terminator.sh >>
 
+Usage: ./setup.sh [-u user1,user2,...] [-r]
+  -u user1,user2,...  : Specify multiple usernames for setup, separated by commas (e.g., kali,user2).
+  -r                  : Download the config file for the root user.
+
+
 ## Useful packages to install
 ```
 sudo apt update && sudo apt install -y seclists burpsuite dirsearch golang git gobuster 
