@@ -52,3 +52,11 @@ Usage: ./setup_terminator.sh [-u user1,user2,...] [-r]
 sudo apt update && sudo apt install -y seclists burpsuite dirsearch golang git gobuster ffuf wfuzz xxd sublist3r amass feroxbuster pdfcrack dirsearch
 ```
 
+### JTWtool
+```
+https://github.com/ticarpi/jwt_tool
+```
+JWT Secrets list >
+```
+https://github.com/wallarm/jwt-secrets/blob/master/jwt.secrets.list
+```
