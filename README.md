@@ -46,7 +46,9 @@ Usage: ./setup_terminator.sh [-u user1,user2,...] [-r]
   -r                  : Download the config file for the root user.
 ```
 
-## Useful packages to install
+### Useful packages to install
+## Basic
 ```
-sudo apt update && sudo apt install -y seclists burpsuite dirsearch golang git gobuster 
+sudo apt update && sudo apt install -y seclists burpsuite dirsearch golang git gobuster ffuf wfuzz xxd sublist3r amass feroxbuster pdfcrack dirsearch
 ```
+
