@@ -61,11 +61,17 @@ JWT Secrets list >
 https://github.com/wallarm/jwt-secrets/blob/master/jwt.secrets.list
 ```
 
-## Useful Browser xtension
+### Useful Browser Extension
 ```
 Foxyproxy
 Cookies Editor
 Hack-Tools
 HackBar
 Wappalyzer
+```
+
+### Cryption/Encription/Encode/Decode
+```
+https://gchq.github.io/CyberChef/
+https://www.dcode.fr/vigenere-cipher
 ```
