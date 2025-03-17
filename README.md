@@ -60,3 +60,12 @@ JWT Secrets list >
 ```
 https://github.com/wallarm/jwt-secrets/blob/master/jwt.secrets.list
 ```
+
+## Useful Browser xtension
+```
+Foxyproxy
+Cookies Editor
+Hack-Tools
+HackBar
+Wappalyzer
+```
