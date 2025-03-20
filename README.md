@@ -49,7 +49,7 @@ Usage: ./setup_terminator.sh [-u user1,user2,...] [-r]
 ## Useful tools
 ### Basic
 ```
-sudo apt update && sudo apt install -y seclists burpsuite dirsearch golang git gobuster ffuf wfuzz xxd sublist3r amass feroxbuster pdfcrack dirsearch
+sudo apt update && sudo apt install -y seclists burpsuite dirsearch golang git gobuster ffuf wfuzz xxd sublist3r amass feroxbuster pdfcrack dirsearch ghidra
 ```
 
 ### JTWtool
